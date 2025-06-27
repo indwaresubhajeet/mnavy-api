@@ -1,0 +1,60 @@
+{
+  "name": "mnavy-api",
+  "version": "1.0.0",
+  "author": "ITPL",
+  "license": "ISC",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx prisma generate && tsx watch src/app.ts",
+    "build": "npx prisma generate && tsc",
+    "start": "node --max_old_space_size=8192 dist/app.js",
+    "format": "prettier --write --ignore-unknown \"**/*.{ts,js,json}\"",
+    "format:check": "prettier --check \"./**/*.{ts,js,json}\"",
+    "prisma:init": "npx prisma init",
+    "prisma:create": "npx prisma migrate dev --create-only --name",
+    "prisma:migrate": "npx prisma migrate dev --name",
+    "prisma:deploy": "npx prisma migrate deploy",
+    "prisma:generate": "npx prisma generate",
+    "prisma:push": "npx prisma db push",
+    "prisma:pull": "npx prisma db pull",
+    "prisma:reset": "npx prisma migrate reset",
+    "prisma:validate": "npx prisma validate",
+    "prisma:format": "npx prisma format",
+    "studio": "npx prisma studio"
+  },
+  "dependencies": {
+    "@azure/identity": "^4.10.1",
+    "@azure/storage-blob": "^12.27.0",
+    "@prisma/client": "^6.10.1",
+    "bcrypt": "^6.0.0",
+    "compression": "^1.8.0",
+    "dotenv": "^17.0.0",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "nodemailer": "^7.0.3",
+    "winston": "^3.17.0",
+    "zod": "^3.25.67"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/compression": "^1.8.1",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^24.0.7",
+    "@types/nodemailer": "^6.4.17",
+    "prettier": "^3.6.2",
+    "prisma": "^6.10.1",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "prisma": {
+    "schema": "./prisma"
+  }
+}

@@ -1,0 +1,23 @@
+enum UserType {
+  SHIP_COMPANY_ADMIN
+  SHIP_ADMIN
+  CAPTAIN
+  SECOND_OFFICER
+}
+
+model User {
+  id         String   @id @default(cuid())
+  name       String   @db.VarChar(255)
+  email      String   @unique @db.VarChar(255)
+  password   String   @db.VarChar(255)
+  phone      String   @db.VarChar(20)
+  userType   UserType
+  isActive   Boolean  @default(true)
+  softDelete Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  auditTrails AuditTrail[]
+
+  @@map("users")
+}

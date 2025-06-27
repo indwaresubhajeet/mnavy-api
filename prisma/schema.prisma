@@ -1,0 +1,11 @@
+// This is your Prisma schema file,
+// Models are defined in the models/ directory
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
